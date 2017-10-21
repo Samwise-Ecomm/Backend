@@ -1,6 +1,6 @@
 version: '2'
 
-sevices:
+services:
   app:
     build:
       context: ./
