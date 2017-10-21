@@ -276,26 +276,4 @@ Route::group(['prefix' => 'public-api'], function() {
 
 });
 
-/*
-|--------------------------------------------------------------------------
-| Admin panel
-|--------------------------------------------------------------------------
-*/
-
-Route::group(['prefix' => 'admin'], function() {
-
-	Route::get('/', 'AdminController@home');
-	Route::get('/page/{id}', 'AdminController@editPage');
-	Route::get('{path}', 'AdminController@home')->where(['path' => '.*']);
-
-});
-
-
-/*
-|--------------------------------------------------------------------------
-| Storefront Routes
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/', function() { return redirect('home'); });
-Route::get('/{path}', 'StoreController@home')->where(['path' => '.*']);
+Route::get('/ping', function() { return 'true'; });
