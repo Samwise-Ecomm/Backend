@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'v0'], function() {
+Route::group(['prefix' => 'v0', 'middleware' => 'cors'], function() {
 	/*
 	|--------------------------------------------------------------------------
 	| Private API (All of the authenticated routes)
