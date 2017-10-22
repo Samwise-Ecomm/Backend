@@ -260,16 +260,18 @@ Route::group(['prefix' => 'v0'], function() {
 	| Public API (All of the publicaly available resources in one place)
 	|--------------------------------------------------------------------------
 	*/
-	Route::get('ping', function() { return 'true'; });
+	Route::group(['prefix' => 'public'], function() {
+		Route::get('ping', function() { return 'true'; });
 
-	Route::get('menus', 'PublicController@indexMenus');
-	Route::get('offers', 'PublicController@indexOffers');
-	Route::get('settings', 'PublicController@settings');
+		Route::get('menus', 'PublicController@indexMenus');
+		Route::get('offers', 'PublicController@indexOffers');
+		Route::get('settings', 'PublicController@settings');
 
-	Route::get('catalog/{id}', 'PublicController@showCatalog');
-	Route::get('offer/{id}', 'PublicController@showOffer');
-	Route::get('page/{slug}', 'PublicController@showPage')->where(['slug' => '.*']);
+		Route::get('catalog/{id}', 'PublicController@showCatalog');
+		Route::get('offer/{id}', 'PublicController@showOffer');
+		Route::get('page/{slug}', 'PublicController@showPage')->where(['slug' => '.*']);
 
-	Route::post('auth', 'AuthController@login');
-	Route::post('invoice', 'PublicController@storeInvoice');
+		Route::post('auth', 'AuthController@login');
+		Route::post('invoice', 'PublicController@storeInvoice');
+	});
 });
