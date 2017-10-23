@@ -33,18 +33,12 @@ services:
       - "MYSQL_ROOT_PASSWORD=secret"
     ports:
       - "33061:3306"
-
+  
   search:
     image: elasticsearch:2.1
-    volumes:
-      - elasticsearch-data:/usr/share/elasticsearch/data
-      - elasticsearch-plugins:/usr/share/elasticsearch/plugins
     ports:
       - "9200:9200"
       - "9300:9300"
 
 volumes:
   dbdata:
-  elasticsearch-data:
-  elasticsearch-plugins:
-  

@@ -319,7 +319,7 @@ class Invoice extends Model
 					"preserve_original" => 1,
 					"patterns" => [
 						"([^@]+)",
-						"(\\p[L}+)",
+						"(\\p{L}+)",
 						"(\\d+)",
 						"@(.+)",
 						"([^-@]+)"
