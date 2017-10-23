@@ -161,6 +161,7 @@ return [
 		 */
 		Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 		Intervention\Image\ImageServiceProvider::class,
+		Barryvdh\Cors\ServiceProvider::class,
 
 		App\Providers\SearchManagementProvider::class,
 		App\Providers\CacheManagementProvider::class,

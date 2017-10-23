@@ -222,7 +222,7 @@ class Item extends Model
 	/**
 	 * Set mapping properties
 	 */
-	// protected $mappingProperties = [];
+	protected $mappingProperties = [];
 
 	/**
 	 * Modify index model as it goes into ES
