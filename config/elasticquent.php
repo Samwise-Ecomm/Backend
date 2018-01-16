@@ -14,7 +14,7 @@ return array(
     */
 
     'config' => [
-        'hosts'     => ['172.22.0.4:9200'],
+        'hosts'     => ['search:9200'],
         'retries'   => 1,
     ],
 
