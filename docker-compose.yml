@@ -5,6 +5,8 @@ services:
     build:
       context: ./
       dockerfile: app.dockerfile
+    depends_on:
+      - search
     working_dir: /var/www
     volumes:
       - ./:/var/www
@@ -33,7 +35,7 @@ services:
       - "MYSQL_ROOT_PASSWORD=secret"
     ports:
       - "33061:3306"
-  
+
   search:
     image: elasticsearch:2.1
     ports:
